@@ -1,0 +1,13 @@
+-- INSERT INTO product (name, priceUSD)
+-- VALUES ('bread', 3.12),
+--        ('meat', 6.1),
+--        ('chicken', 2.78),
+--        ('wine', 1.66),
+--        ('water', 0.55),
+--        ('white bread', 5.31),
+--        ('yogurt', 2.56),
+--        ('oil', 1.1),
+--        ('milk', 3.43);
+--
+-- INSERT INTO discount_card (card_number, percent)
+-- VALUES (1234, 10);

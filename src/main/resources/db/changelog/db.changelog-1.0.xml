@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+        xmlns:pro="http://www.liquibase.org/xml/ns/pro"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+		http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+		http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd
+		http://www.liquibase.org/xml/ns/pro http://www.liquibase.org/xml/ns/pro/liquibase-pro-latest.xsd">
+
+    <changeSet id="1" author="stasevich">
+        <sql>
+            CREATE TABLE product
+            (
+                id          SERIAL PRIMARY KEY       NOT NULL,
+                name        varchar(255)             NOT NULL,
+                price_usd   NUMERIC                  NOT NULL,
+                create_date TIMESTAMP with time zone NOT NULL DEFAULT CURRENT_TIMESTAMP
+            );
+            CREATE TABLE discount_card
+            (
+                id               SERIAL PRIMARY KEY       NOT NULL,
+                card_number      int                      NOT NULL,
+                discount_percent int                      NOT NULL,
+                create_date      TIMESTAMP with time zone NOT NULL DEFAULT CURRENT_TIMESTAMP
+            );
+
+        </sql>
+        <rollback>
+            DROP TABLE product;
+            DROP TABLE discount_card;
+        </rollback>
+    </changeSet>
+
+    <changeSet id="2" author="stasevich">
+        <sql>
+            INSERT INTO product (name, price_usd)
+            VALUES ('bread', 3.12),
+                   ('meat', 6.1),
+                   ('chicken', 2.78),
+                   ('wine', 1.66),
+                   ('water', 0.55),
+                   ('white bread', 5.31),
+                   ('yogurt', 2.56),
+                   ('oil', 1.1),
+                   ('milk', 3.43);
+
+            INSERT INTO discount_card (card_number, discount_percent)
+            VALUES (1234, 10);
+
+        </sql>
+        <rollback>
+
+        </rollback>
+    </changeSet>
+
+</databaseChangeLog>

@@ -1,0 +1,14 @@
+-- CREATE TABLE product
+-- (
+--     id          SERIAL PRIMARY KEY       NOT NULL,
+--     name        varchar(255)             NOT NULL,
+--     priceUSD    NUMERIC                  NOT NULL,
+--     create_date TIMESTAMP with time zone NOT NULL DEFAULT CURRENT_TIMESTAMP
+-- );
+-- CREATE TABLE discount_card
+-- (
+--     id          SERIAL PRIMARY KEY       NOT NULL,
+--     card_number      int                      NOT NULL,
+--     percent     int                      NOT NULL,
+--     create_date TIMESTAMP with time zone NOT NULL DEFAULT CURRENT_TIMESTAMP
+-- );
