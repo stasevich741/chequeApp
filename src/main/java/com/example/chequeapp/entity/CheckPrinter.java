@@ -34,7 +34,7 @@ public class CheckPrinter {
 
     public CheckPrinter(List<Integer> idAndCount) {
     }
-
+// так и не смог придумать метод печатания чека(
     public String print() {
 //                Map<String,Integer> idAndCounts = makeMapWithIdAndCount();
 
